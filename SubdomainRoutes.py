@@ -1,10 +1,10 @@
 # importing library
 import requests
-
+import datetime
+import time
 # function for scanning subdomains
 def domain_scanner(domain_name,sub_domnames):
-	print('-----------Scanner Started-----------')
-	print('----URL after scanning subdomains----')
+	print('-----------Subdomain Scanner Started-----------\n')
 	
 	# loop for getting URLs
 	for subdomain in sub_domnames:
@@ -34,11 +34,13 @@ def domain_scanner(domain_name,sub_domnames):
 if __name__ == '__main__':
 
 	# inputting the domain name
-	dom_name = input("Enter the Domain Name: ")
-	print('\n')
+	with open('Result_current.txt') as f:
+         dom_name = f.readline().strip()
+	
+print('\n')
 
 	# opening the subdomain text file
-	with open('subdomains_test.txt','r') as file:
+with open('hehe.txt','r') as file:
 	
 		# reading the file
 		name = file.read()
@@ -49,4 +51,4 @@ if __name__ == '__main__':
 		
 	# calling the function for scanning the subdomains
 	# and getting the url
-	domain_scanner(dom_name,sub_dom)
+domain_scanner(dom_name,sub_dom)

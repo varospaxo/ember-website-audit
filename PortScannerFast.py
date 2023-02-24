@@ -3,7 +3,9 @@ from socket import AF_INET
 from socket import SOCK_STREAM
 from socket import socket
 from concurrent.futures import ThreadPoolExecutor
- 
+import os
+import subprocess
+print("\n-----------Remote Port Scanner Started-----------")
 # returns True if a connection can be made, False otherwise
 def test_port_number(host, port):
     # create and configure the socket
@@ -22,7 +24,7 @@ def test_port_number(host, port):
  
 # scan port numbers on a host
 def port_scan(host, ports):
-    print(f'Port Scanning {host}...')
+    print(f'\nPort Scanning {host}...')
     # create the thread pool
     with ThreadPoolExecutor(len(ports)) as executor:
         # dispatch all tasks
@@ -33,7 +35,13 @@ def port_scan(host, ports):
                 print(f'> {host}:{port} open') 
 # define host and port numbers to scan
 
-HOST = input("Enter Hostname: ")
+with open('Result_current.txt') as f:
+    hostname = f.readline().strip()
+HOST = hostname
 PORTS = range(1024)
 # test the ports
 port_scan(HOST, PORTS)
+print("\n----Scanning Finished----\n")
+rawpath = os.getcwd() + "\\OSDetect.py"
+path = rawpath.replace('\\', '/')
+subprocess.call(['python', path])
