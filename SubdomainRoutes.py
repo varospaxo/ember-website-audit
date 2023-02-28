@@ -17,7 +17,7 @@ def domain_scanner(domain_name,sub_domnames):
 		try:
 		
 			# sending get request to the url
-			requests.get(url)
+			requests.get(url, timeout=5)
 			
 			# if after putting subdomain one by one url
 			# is valid then printing the url
