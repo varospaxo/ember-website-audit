@@ -1,0 +1,17 @@
+
+[+] https://www.facebook.com
+[+] https://blog.facebook.com
+[+] https://m.facebook.com
+[+] https://mobile.facebook.com
+[+] https://api.facebook.com
+[+] https://secure.facebook.com
+[+] https://webmail.facebook.com
+[+] https://news.facebook.com
+[+] https://www2.facebook.com
+[+] https://static.facebook.com
+[+] https://ads.facebook.com
+[+] https://beta.facebook.com
+[+] https://shop.facebook.com
+[+] https://new.facebook.com
+[+] https://dns.facebook.com
+[+] https://pay.facebook.com

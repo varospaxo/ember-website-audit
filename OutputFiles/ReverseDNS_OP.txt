@@ -1,0 +1,3 @@
+Domain Name: facebook.com
+IP Address: 157.240.16.35
+Reverse DNS address: edge-star-mini-shv-01-bom1.facebook.com

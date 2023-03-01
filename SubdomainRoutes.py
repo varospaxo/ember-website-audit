@@ -1,7 +1,6 @@
 # importing library
 import requests
-import datetime
-import time
+import os
 # function for scanning subdomains
 def domain_scanner(domain_name,sub_domnames):
 	print('-----------Subdomain Scanner Started-----------\n')
@@ -22,11 +21,21 @@ def domain_scanner(domain_name,sub_domnames):
 			# if after putting subdomain one by one url
 			# is valid then printing the url
 			print(f'[+] {url}')
+			f = open("./Subdomain.txt", "a")
+			f.write(f'\n[+] {url}')
+			f.close()
 			
 		# if url is invalid then pass it
 		except requests.ConnectionError:
 			pass
+	path_current="./Subdomain.txt"
+	movepath = "./OutputFiles/Subdomain_OP.txt" 
+	os.replace(path_current, movepath)
 	print('\n')
+
+ 
+#Remove Temp File Save Output File
+	
 	print('----Scanning Finished----')
 	print('-----Scanner Stopped-----')
 
@@ -34,13 +43,13 @@ def domain_scanner(domain_name,sub_domnames):
 if __name__ == '__main__':
 
 	# inputting the domain name
-	with open('Result_current.txt') as f:
+	with open('./OutputFiles/Result_current.txt') as f:
          dom_name = f.readline().strip()
 	
 print('\n')
 
 	# opening the subdomain text file
-with open('hehe.txt','r') as file:
+with open('Subdomain_names.txt','r') as file:
 	
 		# reading the file
 		name = file.read()
@@ -52,3 +61,4 @@ with open('hehe.txt','r') as file:
 	# calling the function for scanning the subdomains
 	# and getting the url
 domain_scanner(dom_name,sub_dom)
+

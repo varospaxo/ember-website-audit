@@ -1,0 +1,3 @@
+IP Address: 157.240.16.35
+Host is UP!
+Ping Avg Response Time:4.45

@@ -1,4 +1,3 @@
-
 import ssl
 import socket
 import datetime
@@ -12,7 +11,7 @@ print(f"\n-----------SSL Status Service Started-----------\n")
 
 # ##opening file
 # host = input("Enter Hostname: ")
-with open('Result_current.txt') as f:
+with open('./OutputFiles/Result_current.txt') as f:
     host = f.readline().strip()
 # port= input ("Enter Port (80, 8080, 443): ")
 port='443'
@@ -27,20 +26,24 @@ try:
                 )
                 daysToExpiration = (certExpires - datetime.datetime.now()).days
                 print(f"Expires on: {certExpires} in {daysToExpiration} days")
-                ##preparing mailbody
-                mailbody = (
-                    "Server name: "
-                    + host
-                    + ", expires in "
-                    + str(daysToExpiration)
-                    + " days."
-                )
-
+                f = open("./SSLCert.txt", "a")
+                f.write(f"SSL Certificate expires on: {certExpires} in {daysToExpiration} days")
+                f.close()
+                
 except:
-            print(f"error on connection to Server or incorrect port selected, {host}")
+            print(f"Error on connection to Server or incorrect port selected, {host}")
+            f = open("./SSLCert.txt", "a")
+            f.write("Error on connection to Server or incorrect port selected ")
+            f.close()
 
-        ##sending ses email
+#Remove Temp File Save Output File
+path_current="./SSLCert.txt"
+movepath = "./OutputFiles/SSLCert_OP.txt" 
+os.replace(path_current, movepath)
+
 print(f"\n-----Scanning Finished-----\n")
+
+#Run Next Script
 rawpath = os.getcwd() + "\\ReverseDNS.py"
 path = rawpath.replace('\\', '/')
 subprocess.call(['python', path])

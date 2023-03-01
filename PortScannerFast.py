@@ -32,16 +32,23 @@ def port_scan(host, ports):
         # report results in order
         for port,is_open in zip(ports,results):
             if is_open:
-                print(f'> {host}:{port} open') 
+                print(f'> {host}:{port} open')
+                file = open("./PortScannerFast.txt", "a")          
+                file.writelines("\n"+str(port))
+                file.close()
+                
 # define host and port numbers to scan
 
-with open('Result_current.txt') as f:
+with open('./OutputFiles/Result_current.txt') as f:
     hostname = f.readline().strip()
 HOST = hostname
 PORTS = range(1024)
 # test the ports
 port_scan(HOST, PORTS)
+path_current="./PortScannerFast.txt"
+movepath = "./OutputFiles/PortScannerFast_OP.txt" 
+os.replace(path_current, movepath)
 print("\n----Scanning Finished----\n")
-rawpath = os.getcwd() + "\\OSDetect.py"
+rawpath = os.getcwd() + "\\Traceroute.py"
 path = rawpath.replace('\\', '/')
 subprocess.call(['python', path])
