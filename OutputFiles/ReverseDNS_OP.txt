@@ -1,3 +1,3 @@
-Domain Name: facebook.com
-IP Address: 157.240.16.35
-Reverse DNS address: edge-star-mini-shv-01-bom1.facebook.com
+Domain Name: github.com
+IP Address: 20.207.73.82
+Could not find results for reverse DNS search!!!

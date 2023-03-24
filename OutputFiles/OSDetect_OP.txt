@@ -1,2 +1,2 @@
 OS Type: FreeBSD
-Detection Accuracy: 86
+Detection Accuracy: 97

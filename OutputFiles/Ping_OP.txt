@@ -1,3 +1,3 @@
-IP Address: 157.240.16.35
+Hostname unavailable!IP Address: 20.207.73.82
 Host is UP!
-Ping Avg Response Time:4.45
+Ping Avg Response Time:2000.0
