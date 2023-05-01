@@ -1,5 +1,5 @@
 # ember-website-audit
-
+A one-click CLI tool to perform security audit on websites. Purely based on Python<br>
 <H1>Installation</H1>
 <P>
 1. Enter the directory with all files.</br>
